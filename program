@@ -1,0 +1,57 @@
+// A simple program that randomly guess what the visitor likes
+
+const randomNum = Math.floor(Math.random() * 5) * 2000;
+
+const sportGames = ['FIFA', 'PES', 'KONAMI', 'WINNING ELEVEN'];
+const gameSelector = Math.floor(Math.random() * 5);
+const selectGame = sportGames[gameSelector];
+
+
+
+console.log(gameSelector)
+
+const delayedMessage = () => {
+    var visitor = document.getElementById("visitorName").value;
+    document.getElementById("visitorWN").innerHTML = "Thanks for checking in " + visitor;
+  if (1 != 2) {
+    document.getElementById("fOut").innerHTML = `<b>It looks like you are an excellent player of ${selectGame} game ${visitor}</b>`;
+    console.log(`It looks like you are an excellent player of ${selectGame} game ${visitor}`);
+  } /*else if (selectGame == 'FIFA') {
+    console.log('You are a great FIFA player lad');
+  } else if(selectGame == 'PES') {
+    console.log('You have extraordinary skills in PES');
+  } else if(selectGame == 'KONAMI') {
+    console.log('You have extraordinary skills in KONAMI Games');
+  }*/ else {
+    document.getElementById("fOut").innerHTML = 'You may leave now';
+    console.log('You may leave now');
+  }
+};
+
+const analyse = () => {
+  document.getElementById("visitorName").onclick = () => {
+  document.getElementById('fOut').innerHTML = "Analysing Visitor... Click 'Start' to continue";
+  }
+};
+
+setTimeout(analyse, 5000);
+document.getElementById("pBut").onclick = () => {
+  document.getElementById("fOut").innerHTML = "Analysing... Please Wait!";
+    setTimeout(delayedMessage, 5000);
+};
+
+//Set timeout is a build in function with 2 parameters, the first is the result the second is the time
+
+
+//A simple program that prints out bible verses on every load
+console.log(randomNum)
+
+const bibleVerse = () => {
+  if (randomNum < 3000) {
+  document.getElementById("JSProgram").innerHTML = 'God so loved the world that he gave his only begotten son, that who so ever believe in him should not perish but have everlasting life';
+  } else if (randomNum > 3000) {
+    document.getElementById("JSProgram").innerHTML = 'The fear of God is the beginning of wisdom';
+}
+};
+
+setTimeout(bibleVerse, randomNum)
